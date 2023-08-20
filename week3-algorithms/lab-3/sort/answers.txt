@@ -1,0 +1,11 @@
+ort1 uses: bubble sort
+
+How do you know?: the time increases like n^2, but it is faster when the array is sorted
+
+sort2 uses: merge sort
+
+How do you know?: faster of the three, the time increases the same way in all the types of arrays
+
+sort3 uses: selection sort
+
+How do you know?: the time increases like n^2, even when the array is sorted
