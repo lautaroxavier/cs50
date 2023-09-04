@@ -1,0 +1,5 @@
+The average valence of the songs in the database is 0.48, the average danceability is 0.71 and the average energy is 0.66.
+I would say that this means that the hipotetical listener of this songs has a Purple Aura because of the high energy and danceability.
+
+It is possible that this is not an accurate way to calculate the aura of a person because the average should take
+into account the number of times each song was played.
