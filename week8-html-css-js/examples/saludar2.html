@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let input =  document.querySelector('input');
+            input.addEventListener('keyup', (event) => {
+                let greet = document.querySelector('p');
+                if(input.value)
+                {
+                    greet.innerHTML = `hola, ${input.value}`;
+                }
+                else
+                {
+                    greet.innerHTML = 'hola, quienquiera que seas';
+                }
+            });
+        });
+    </script>
+    <title>Saludo</title>
+</head>
+<body>
+    <form>
+        <input autocomplete="off" autofocus placeholder="Nombre" type="text">
+    </form>
+    <p></p>
+</body>
+</html>
