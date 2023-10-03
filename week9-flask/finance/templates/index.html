@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Summary
+{% endblock %}
+
+{% block main %}
+
+    
+
+    <table class="table">
+        <thead class="table-dark">
+            <th>
+                Stock
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Total value
+            </th>
+        </thead>
+        <tbody>
+            {% for row in portfolio %}
+                <tr>
+                    <td>{{ row["symbol"] }}</td>
+                    <td>{{ row["quantity"] }}</td>
+                    <td>{{ row["price"] | usd }}</td>
+                    <td>{{ row["total_value"] | usd }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="alert alert-primary" role="alert">
+        <h3>Balance {{ cash | usd }}</h3>
+        
+        <form action="/add" method="post">
+            <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
+                <input type="text" name="amount" class="form-control" aria-label="Amount (to the nearest dollar)">
+                <span class="input-group-text">.00</span>
+              </div>
+            <button type="submit" class="btn btn-success">Add Money</button>
+        
+        
+    </form>
+    </div>
+    <div class="alert alert-info" role="alert">
+        <h3> Grand Total {{ total | usd }} </h3>
+    </div>
+{% endblock %}

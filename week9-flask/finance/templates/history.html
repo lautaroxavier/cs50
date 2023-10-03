@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Summary
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <thead class="table-dark">
+            <th>Date</th>
+            <th>Symbol</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </thead>
+        <tbody>
+            {% for transaction in transactions %}
+                <tr class="table-row">
+                    <td>{{ transaction["timestamp"] }}</td>
+                    <td>{{ transaction["symbol"] }}</td>
+                    <td class="quantity">{{ transaction["quantity"] }}</td>
+                    <td>${{ transaction["stock_price"] | usd }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        let rows = document.getElementsByClassName("table-row");
+        for (let i = 0; i < rows.length; i++)
+        {
+            let quantity = Number(rows[i].getElementsByClassName("quantity")[0].innerHTML)
+            if (quantity < 0)
+            {
+                rows[i].classList.add("table-danger")
+            }
+            else {
+                rows[i].classList.add("table-success")
+            }
+        }
+    </script>
+{% endblock %}

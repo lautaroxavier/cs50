@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ symbol }}
+{% endblock %}
+
+{% block main %}
+    <h2>{{ symbol }}</h2>
+    <h3>Price: {{ price | usd }}</h2> 
+
+{% endblock %}
